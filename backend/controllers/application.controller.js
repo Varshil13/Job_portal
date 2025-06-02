@@ -1,4 +1,4 @@
-import { Application } from "../models/application.model.js";
+import  Application  from "../models/application.model.js";
 import { Job } from "../models/job.model.js";
 
 export const applyJob = async (req, res) => {
@@ -114,11 +114,8 @@ export const updateStatus = async (req,res) => {
                 success:false
             })
         };
-
-    
         application.status = status.toLowerCase();
         await application.save();
-
         return res.status(200).json({
             message:"Status updated successfully.",
             success:true
